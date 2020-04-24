@@ -123,7 +123,7 @@ def sendemails(request):
 	server=smtplib.SMTP('smtp.gmail.com',587)
 	server.ehlo()
 	server.starttls()
-	server.login("prizeshbhadaniya@gmail.com","prizesh@345")
+	server.login("prizeshbhadaniya@gmail.com","your password of mail")
 	msg='To:'+ user.email +'\n'+'From:prizeshbhadaniya@gmail.com'+'\n'+'Subject:Registration @our app\n'
 	msg=msg+ "Hello " +  user.username + ", Thankuh for being part of our us.we provide content and also give platform to student to show their skills.keep Learning!!!"
 	server.sendmail("prizeshbhadaniya@gmail.com", user.email, msg)
@@ -143,7 +143,7 @@ def forget(request):
 	server=smtplib.SMTP('smtp.gmail.com',587)
 	server.ehlo()
 	server.starttls()
-	server.login("prizeshbhadaniya@gmail.com","prizesh@345")
+	server.login("prizeshbhadaniya@gmail.com","your passsword of mail")
 	email=request.POST.get('mail','')
 	msg='To:'+ email+'\n'+'From:prizeshbhadaniya@gmail.com'+'\n'+'Subject:set new password\n'
 	msg = msg +'hello , our provided otp is  ' + otp
