@@ -1,0 +1,65 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+
+<img class="card-img-top" src="{% static 'images/users/sub.png' %}" alt="Card image cap"height="200px" width="50px" />
+  <div class="card-body">
+    <h2 class="card-title"><b>Courses</b></h2>
+    <p class="card-text">All subject realted to you</p>
+    <a href="/subject/all/" class="btn btn-primary">Go</a>
+  </div>
+</div>
+</div>
+
+
+<div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/file.jfif' %}" alt="Card image cap"height="200px" width="50px">
+  <div class="card-body">
+    <h2 class="card-title"><b>Articles</b></h2>
+    <p class="card-text">Read the articles</p>
+    <a href="/article/" class="btn btn-primary">ShowAll</a>
+  </div>
+</div>
+</div>
+</div><br><br>
+
+
+<div class="row">
+  <div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/solution.jfif' %}" alt="Card image cap"height="200px" width="50px">
+  <div class="card-body">
+    <h2 class="card-title"><b>Solution</b></h2>
+    <p class="card-text">You can scroll up all query asked by students</p>
+    <a href="/faq/all/" class="btn btn-primary">ShowFeed</a>
+  </div>
+</div>
+</div>
+
+
+<div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/articles.png' %}" alt="Card image cap"height="200px" width="50px">
+  <div class="card-body">
+    <h2 class="card-title"><b>Question?</b></h2>
+    <p class="card-text">Put your question and we will try to solve it</p>
+    <a href="/faq/query_create/" class="btn btn-primary">Ask us</a>
+  </div>
+</div>
+</div>
+</div>
+
+<link rel="stylesheet" href="{% static 'users/login_teacher.css' %}">
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+{% endblock content %}

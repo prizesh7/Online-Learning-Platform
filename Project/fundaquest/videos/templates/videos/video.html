@@ -1,0 +1,17 @@
+{% extends "home/base.html" %}
+{% block content %}
+	<div class="content-section">
+		{% for i in lastvideo %}
+
+			<div class="media">
+        <video width="320" height="240" controls>
+  <source src="{{i.video.url}}" type="video/mp4"></source>
+</video>
+				<!-- <video width="1000" height="1000" class="rounded-circle account-image" src=""> -->
+				<div class="media-body">
+					<br><br>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}

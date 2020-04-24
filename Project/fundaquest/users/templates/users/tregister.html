@@ -1,0 +1,85 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<script type="text/javascript">
+       var subjects = [];
+       {% for subject in subject_list %}
+           subjects.push('{{subject}}');
+           console.log('{{subject}}');
+       {% endfor %}
+       var test;
+       for(test in subjects)
+       {
+           console.log(subjects[test]);
+       }
+       var testlist = new Array();
+       testlist.push("Nikhil");
+       testlist.push("Prizesh");
+
+       for(test in testlist)
+       {
+           console.log(test);
+       }
+   </script>
+<script type="text/javascript">
+  // console.writeline("hello");
+  document.write("hello");
+    var counter = 1;
+    function add()
+    {
+
+        var dropdown = document.createElement("select");
+        dropdown.setAttribute('id', 'subject'+ counter);
+        dropdown.setAttribute('name', 'subject' + counter)
+        var subject;
+        for (subject in subjects)
+        {
+            var optionelement = document.createElement("option");
+            optionelement.setAttribute('value', subjects[subject]);
+            var data = document.createTextNode(subjects[subject]);
+            optionelement.appendChild(data);
+            dropdown.appendChild(optionelement);
+        }
+        var element = document.getElementById("subjectdropdowns");
+        var rowelement = document.createElement("tr");
+        var dataelement1 = document.createElement("td");
+        var dataelementnode1 = document.createTextNode("Subject" + counter);
+        dataelement1.appendChild(dataelementnode1);
+        var dataelement2 = document.createElement("td");
+        dataelement2.appendChild(dropdown);
+        rowelement.appendChild(dataelement1);
+        rowelement.appendChild(dataelement2);
+        element.appendChild(rowelement);
+        counter++;
+    }
+</script>
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+                {{  f|crispy  }}
+                {{  fm|crispy  }}
+
+                        <tr>
+                            <td colspan="2"><table id="subjectdropdowns"></table></td>
+                        </tr>
+
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <button onclick="add()">Add Subject</button>
+
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+
+{% endblock content %}

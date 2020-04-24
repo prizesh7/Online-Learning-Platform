@@ -1,0 +1,43 @@
+
+{% extends "home/base.html" %}
+
+{% block content %}
+<form method="POST" action="/result/verify/">{% csrf_token %}
+  <br>
+  <label for="answer"><h1>Your Result is: {{result}} %</h1></label>
+  <br>          <br><br><br>
+
+
+
+{% if res %}
+    {% for que in res %}
+
+
+              <!--<a class="mr-2 text-dark" href="#">{{ subject.subject_name }}</a>
+              <small class="text-dark">{{ subject.date |date:"F d, Y" }}</small>-->
+<div>
+
+
+            <h2>{{ que.question }}</h2>
+
+          <br>
+          <label>Correct Answer:</label>
+          <label for="answer">{{que.answer}}</label>
+          <br>
+
+          <br>
+          <label>Hint:</label>
+          <label for="opt4">{{que.hint}}</label>
+          <br><br><br><br>
+
+
+
+
+</div>
+        {% endfor %}
+
+
+
+      </form>
+  {% endif %}
+{% endblock content %}

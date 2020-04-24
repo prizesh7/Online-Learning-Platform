@@ -1,0 +1,13 @@
+{% extends "home/base.html" %}
+{% block content %}
+    {% for topic in topics %}
+    <form method="POST" action="details.html">
+        <article class=" media content-section  rounded card" >
+          <div class="media-body">
+            
+            <h2><a class="title text-dark" href="{% url 'topic-detail' topic.topic_id %}">{{ topic.topic_name }}</a></h2>
+          </div>
+        </article>
+      </form>
+    {% endfor %}
+{% endblock content %}

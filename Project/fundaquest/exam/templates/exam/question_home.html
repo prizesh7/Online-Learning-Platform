@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% block content %}
+    {% for question in questions %}
+    <form method="POST" action="details.html">
+        <article class=" media content-section  rounded card" >
+          <div class="media-body">
+            <div class="metadata">
+              <!--<a class="mr-2 text-dark" href="#">{{ subject.subject_name }}</a>
+              <small class="text-dark">{{ subject.date |date:"F d, Y" }}</small>-->
+            </div>
+            <h2><a class="title text-dark" href="{% url 'question-detail' question.question_id %}">{{ question.question }}</a></h2>
+          </div>
+        </article>
+      </form>
+    {% endfor %}
+{% endblock content %}

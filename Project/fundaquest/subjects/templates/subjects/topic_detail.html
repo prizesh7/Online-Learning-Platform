@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="metadata">
+      <!--<a class="mr-2" href="#">{{ object.topic_name }}</a>-->
+      <small class="text-muted">Creation DateTime : {{ object.date}}</small>
+
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'topic-update' object.topic_id %}">Update</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'topic-delete' object.topic_id %}">Delete</a>
+        </div>
+
+    </div>
+    <h2 class="title">{{ object.topic_name }}</h2>
+    <p class="content text-dark">Semester: {{ object.semester }}</p>
+    <p class="content text-dark">{{ object.description }}</p>
+    <p class="content text-dark">Credit: {{ object.subject.subject_name }}</p>
+  </div>
+</article>
+{% endblock content %}

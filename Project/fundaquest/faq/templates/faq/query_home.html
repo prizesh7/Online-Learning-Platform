@@ -1,0 +1,35 @@
+{% extends "home/base.html" %}
+{% block content %}
+<head>
+  <style>
+    .button {
+    display: block;
+    width: 115px;
+    height: 50px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-bottom:60px;
+    margin-top:10px;
+
+}
+  </style></head>
+    {% for query in queries %}
+    <form method="POST" action="details.html">
+        <article class=" media content-section  rounded card" >
+          <div class="media-body">
+            <div class="metadata">
+              <!--<a class="mr-2 text-dark" href="#">{{ subject.subject_name }}</a>
+              <small class="text-dark">{{ subject.date |date:"F d, Y" }}</small>-->
+            </div>
+            <h2><a class="title text-dark" href="{% url 'query-detail' query.qid %}">{{ query.desp }}</a></h2>
+            <a class="button" href="/faq/give/?questionid={{query.qid}}">Answer</a>
+
+          </div>
+        </article>
+      </form>
+    {% endfor %}
+{% endblock content %}

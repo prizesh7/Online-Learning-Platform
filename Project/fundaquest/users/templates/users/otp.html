@@ -1,0 +1,36 @@
+ <html>
+ <head>
+   <style>
+   form{
+     margin-left:500px;
+     margin-top:240px;
+
+   }
+   .button{
+   background: #73AD21;
+   padding: 4px;
+   width: 100px;
+   height: 30px;
+   border: 1px solid grey;
+
+   }
+   .otp{
+     width:250px;
+     height:30px;
+     border: 2px solid grey;
+   }
+   </style>
+ </head>
+ <body>
+ 	<div>
+ 		{% for message in messages %}
+  		<div class="bg-error">{{message}}</div>
+	{% endfor %}
+    <form action="/users/verify/" method="post">{% csrf_token %}
+    	<label for="otp">OTP</label>
+    	<input type="text" id="otp" name="otp" placeholder="otp" class="otp" required>
+    	<input type="submit" value="verify" class="button">
+  		</form>
+	</div>
+</body>
+</html>

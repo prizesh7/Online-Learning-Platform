@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/main.css' %}">
+  <link rel="icon" href="{% static 'home/icon.png' %}">
+  {% if title %}
+  <title>FundaQuest - {{title}}</title>
+  {% else %}
+  <title>FundaQuest</title>
+  {% endif %}
+</head>
+
+
+
+<body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <div class="bg-image"></div>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-dark mr-4" href="{% url 'articles-home' %}"><img class="" src="{% static 'home/icon.png' %}" height="35" width="35" alt=""></img>&ensp;FundaQuest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="{% url 'home-home' %}"><i class="fa fa-fw fa-home"></i>Home</a>
+            <a class="nav-item nav-link" href="{% url 'home-about' %}"><i class="fa fa-fw fa-envelope"></i>About</a>
+
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Search form -->
+              <!-- <form class="form-inline" method="GET" action="/search">
+                <input name='q' class="form-control" type="text" placeholder="Search" aria-label="Search">
+              </form> -->
+              <form class="form-inline my-2 my-lg-0">
+                <input type="text" name="q" placeholder="Search..." class="mySearch" maxlength="2000" required id="idq">
+                <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                --><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="nav-item nav-link"  href="{% url 'profile' %}">{{user.username}}</a>
+            {% else %}
+            <a class="nav-item nav-link"  href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link"  href="{% url 'register' %}">Register</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  {% if user.is_authenticated %}
+
+    <ul class="breadcrumb">
+      <li><a href="{% url 'back' %}">Back</a></li>
+    </ul>
+
+  {% endif %}
+
+
+
+
+
+<div class="col-md-10">
+  <div class="row">
+    <div class="col-md-10 col-sm-12">
+
+      <!-- <nav class="navbar" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav> -->
+      <main role="main" class="position-relative container ">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{message.tags}}{% endif %}">
+          {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+<!--
+ 	<div>
+  <form action="/users/set/" method="post">{% csrf_token %}
+     <label for="uname">UserName</label>
+    <input type="text" id="uname" name="uname" placeholder="User name" required>
+
+     <label for="pass">Password</label>
+    <input type="password" id="pass" name="pass" placeholder="Enter password" required>
+
+    <label for="pass">ReEnter password</label>
+    <input type="password" id="repass" name="repass" placeholder="Enter password" required>
+    <input type="submit" value="SignIn">
+  </form>
+</div> -->
+
+{% load static %}
+
+<html>
+<body>
+  <div class="main">
+    <p class="sign" align="center">Sign in</p>
+    <form method="POST" class="form1" action="/users/set/">{% csrf_token %}
+      <input class="un " type="text" align="center" placeholder="Username" name="uname" required="required">
+      <input class="pass" type="password" align="center" placeholder="Password" name="pass" required="required">
+      <input class="pass" type="password" align="center" placeholder="Password" name="repass" required="required">
+
+      <button class="submit" align="center">Set</button>
+
+
+    </div>
+
+       <link rel="stylesheet" href="{% static 'users/main.css' %}">
+       <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+     </body>
+     </html>

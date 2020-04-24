@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+    {% for article in articles %}
+          <img class="round-profile" src="{% static 'articles/user.png' %}"/>
+          <article class=" media content-section arrow mycard" >
+            <div class="media-body">
+              <div class="metadata">
+                <a class="mr-2 text-dark" href=#">{{ article.teacher }}</a>
+                <small class="text-dark">{{ article.date |date:"F d, Y" }}</small>
+              </div>
+              <h2><a class="title text-dark" href="{% url 'article-detail' article.article_id %}">{{ article.topic.topic_name }}</a></h2>
+            </div>
+          </article>
+    {% endfor %}
+{% endblock content %}

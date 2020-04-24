@@ -1,0 +1,34 @@
+ <html>
+ <head>
+   <style>
+   form{
+     margin-left:500px;
+     margin-top:240px;
+
+   }
+   .button{
+   background: #73AD21;
+   padding: 4px;
+   width: 100px;
+   height: 30px;
+   border: 1px solid grey;
+
+   }
+   .mail{
+     width:250px;
+     height:30px;
+     border: 2px solid grey;
+   }
+   </style>
+ </head>
+ <body>
+ 	<div>
+  <form action="/users/forget/" method="post">{% csrf_token %}
+     <h2><label for="Mail">Mail:</label></h2>
+    <input type="text" id="mail" name="mail" placeholder="Gmail" class="mail" required>
+<br><br>
+    <input type="submit" value="Send OTP" class="button">
+  </form>
+</div>
+</body>
+</html>

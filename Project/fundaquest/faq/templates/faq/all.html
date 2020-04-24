@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+<!--  form to take user input -->
+{% block content %}
+
+  {% for a in al %}
+  <label for="answer"><h3>Question:</h3></label><br>
+  <label><h4>{{a.question.desp}}</h4></label><br>
+
+    <label for="answer"><h3>Answer:</h3></label><br>
+    <label><h4>{{a.desp}}</h4></label><br>
+
+  <label for="answer"><h3>Subject:</h3></label><br>
+  <label><h4>{{a.subject}}</h4></label><br>
+
+
+
+  <label for="answer"><h3>SolvedBy:</h3></label><br>
+  <label><h5>{{a.teacher}}</h5></label><br><br><br><br>
+
+{% endfor %}
+{% endblock content %}

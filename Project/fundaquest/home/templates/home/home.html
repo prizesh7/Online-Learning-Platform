@@ -1,0 +1,12 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <h1>FundaQuest</h1>
+    <div class="myForm">
+        <form class="myForm" method="POST" action='{% url "home-search" %}'>
+            {% csrf_token %}
+            {{ form }}<button class="btn btn-outline-info searchButton" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/test.jfif' %}" alt="Card image cap"height="200px" width="50px" />
+  <div class="card-body">
+    <h5 class="card-title">Create Test</h5>
+    <p class="card-text">Create question for the test</p>
+    <a href="/exam/question_create/" class="btn btn-primary">CreateTest</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/file.jfif' %}" alt="Card image cap"height="200px" width="50px" />
+  <div class="card-body">
+    <h5 class="card-title">Upload Documents</h5>
+    <p class="card-text">Upload file format</p>
+    <a href="/materials/filecreate/" class="btn btn-primary">UploadFile</a>
+  </div>
+</div>
+</div>
+</div><br><br>
+
+
+<div class="row">
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+
+    <img class="card-img-top" src="{% static 'images/users/video.jfif' %}" alt="Card image cap"height="200px" width="50px" />
+  <div class="card-body">
+    <h5 class="card-title">Upload Videos</h5>
+    <p class="card-text">Upload Video content realted to your subject</p>
+    <a href="/videos/uploadvideo/" class="btn btn-primary">UploadVideo</a>
+  </div>
+</div>
+</div>
+
+
+<div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/task.jfif' %}" alt="Card image cap"height="200px" width="50px" />
+  <div class="card-body">
+    <h5 class="card-title">Your Task</h5>
+    <p class="card-text">Solve the question asked by students</p>
+    <a href="/faq/" class="btn btn-primary">Answer it!!!</a>
+  </div>
+</div>
+</div>
+</div><br><br>
+
+
+<div class="row">
+<div class="col">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/users/tarticle.jfif' %}" alt="Card image cap"height="200px" width="50px" />
+  <div class="card-body">
+    <h5 class="card-title">Upload Articles</h5>
+    <p class="card-text">Specify some notes on related topics</p>
+    <a href="/article/create/" class="btn btn-primary">AddArticles</a>
+  </div>
+</div>
+</div>
+</div>
+
+<link rel="stylesheet" href="{% static 'users/login_teacher.css' %}">
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+{% endblock content %}

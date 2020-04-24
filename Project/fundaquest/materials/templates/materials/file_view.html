@@ -1,0 +1,17 @@
+{% extends "home/base.html" %}
+{% block content %}
+	<div class="content-section">
+		{% for i in file %}
+
+			<div class="media">
+        <!-- <embed src="{{i.file}}" class="rounded-circle account-image" width="800px" height="210px" /> -->
+        <embed src="{{i.file}}" type=""  height="700px" width="500" class="responsive">
+
+				<!-- <video width="100" height="100"  src=""> -->
+				<div class="media-body">
+					<br><br>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}

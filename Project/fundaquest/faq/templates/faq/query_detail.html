@@ -1,0 +1,22 @@
+{% extends "home/base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="metadata">
+      <!--<a class="mr-2" href="#">{{ object.object_name }}</a>-->
+      <small class="text-muted">Creation DateTime : {{ object.date}}</small>
+
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'query-update' object.qid %}">Update</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'query-delete' object.qid %}">Delete</a>
+        </div>
+
+    </div>
+    <h2 class="title">{{ object.desp }}</h2>
+    <p class="content text-dark">by {{ object.student }}</p>
+    <p class="content text-dark">of {{ object.subject }}</p>
+  </div>
+</article>
+
+
+{% endblock content %}

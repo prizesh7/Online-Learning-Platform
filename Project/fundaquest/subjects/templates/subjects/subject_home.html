@@ -1,0 +1,70 @@
+{% extends "home/base.html" %}
+{% block content %}
+<head>
+  <style>
+    .button1 {
+    display: block;
+    width: 115px;
+    height: 50px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-bottom:60px;
+    margin-top:10px;
+
+}
+
+.button {
+cursor: pointer;
+border-radius: 5em;
+color: #fff;
+/* background: linear-gradient(to right, #9C27B0, #E040FB); */
+background: linear-gradient(to bottom, #990099 0%, #ff00ff 100%);
+
+border: 0;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 10px;
+padding-top: 10px;
+font-family: 'Ubuntu', sans-serif;
+margin-top: 50%;
+
+margin-left: 30px;
+font-size: 13px;
+box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+display:inline;
+}
+a:hover
+{
+  background-color:grey;
+}
+ #temp {
+     background: linear-gradient(to bottom, #99ccff 0%, #ffffff 100%);
+     margin-top:45px;
+}
+
+
+  </style></head>
+  
+
+    {% for subject in subjects %}
+    <form method="POST" action="details.html">
+
+        <article class=" media content-section  rounded card" id="temp">
+          <div class="media-body">
+            <h1><b><a class="title text-dark" href="{% url 'subject-detail' subject.subject_id %}">{{ subject.subject_name }}</a></b></h1><br>
+            <a class="button" href="/result/take/?name={{subject.subject_name}}">Test</a>
+            <a class="button" href="/videos/showvideo/?video={{subject.subject_name}}">Videos</a>
+            <a class="button" href="/materials/fileview/?file={{subject.subject_name}}">Content</a>
+
+        </div>
+        </article>
+
+      <!--  <a class="button" href=" ">Video</a> -->
+
+      </form>
+    {% endfor %}
+{% endblock content %}

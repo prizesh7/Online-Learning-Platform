@@ -1,0 +1,70 @@
+
+{% extends "home/base.html" %}
+
+{% block content %}
+<!-- <script type="text/javascript">
+  function take()
+  {
+    document.writeline("hello");
+    var que = [];
+    {% for i in questions %}
+        que.push('{{i}}');
+        console.log('{{i}}');
+    {% endfor %}
+
+    var i;
+    var map1 = new Map();
+
+for (i = 0; i < que.length; i++) {
+  var ele = document.getElementsByName('que.question_id');
+for (i = 0; i < ele.length; i++)
+{
+  if(ele[i].checked)
+  {
+    map1.set("que.question_id",ele[i].value );
+  }
+}
+}
+
+console.log(map1);
+return map1;
+
+}
+</script> -->
+
+<form method="POST"  action="/result/verify/">{% csrf_token %}
+
+{% if questions %}
+    {% for que in questions %}
+
+
+              <!--<a class="mr-2 text-dark" href="#">{{ subject.subject_name }}</a>
+              <small class="text-dark">{{ subject.date |date:"F d, Y" }}</small>-->
+<div>
+            <h2>{{ que.question }}</h2>
+
+            <input type="hidden" id="{{que.question_id}}" name="number{{ forloop.counter }}" value="{{que.question_id}}">
+            <input type="radio" id="opt1" name="radio{{que.question_id}}" value="{{que.opt1}}">
+            <label for="opt1">{{que.opt1}}</label>
+          <br>
+            <input type="radio" id="opt2" name="radio{{que.question_id}}" value="{{que.opt2}}">
+            <label for="opt2">{{que.opt2}}</label>
+          <br>
+            <input type="radio" id="opt3" name="radio{{que.question_id}}" value="{{que.opt3}}">
+            <label for="opt3">{{que.opt3}}</label>
+          <br>
+          <input type="radio" id="opt4" name="radio{{que.question_id}}" value="{{que.opt4}}">
+          <label for="opt4">{{que.opt4}}</label>
+          <br>
+
+
+</div>
+        {% endfor %}
+        <input type="hidden" name="obj" value="{{questions}}">
+
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submitTest" onclick="take()">Submit</button>
+          </div>
+      </form>
+  {% endif %}
+{% endblock content %}

@@ -1,0 +1,297 @@
+
+    /* Changing the arrow position to bottom center position,
+      translateX(50%) works with right: 50%
+      to accurately  center the arrow */
+
+      ul.breadcrumb {
+      padding: 10px 16px;
+      list-style: none;
+      background-color: #eee;
+    }
+
+    /* Display list items side by side */
+    ul.breadcrumb li {
+      display: inline;
+      font-size: 18px;
+    }
+
+    /* Add a slash symbol (/) before/behind each list item */
+    ul.breadcrumb li+li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+    }
+
+    /* Add a color to all links inside the list */
+    ul.breadcrumb li a {
+      color: #0275d8;
+      text-decoration: none;
+    }
+
+    /* Add a color on mouse-over */
+    ul.breadcrumb li a:hover {
+      color: #01447e;
+      text-decoration: underline;
+    }
+    .dropdown-toggle::after {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+}
+
+
+
+.navbar.navbar-expand-md{
+  height: 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #000;
+  font-weight: bold;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color:#000;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.title {
+  color: #444444;
+}
+
+a.title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.content {
+  white-space: pre-line;
+}
+
+.img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.site-header {
+  height : 4rem;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+article.media, table.media {
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+article.media:before, article.media:after {
+  content: "";
+
+
+  border-style: solid;
+  border-color: transparent;
+}
+
+article.media:after {
+  left: -16px;
+  top: 30px;
+  /*Use boarder color of panel*/
+  border-right-color: white;
+  border-width: 16px;
+}
+
+article.model:before {
+  left: 1px;
+  top: 31px;
+  /*Change for different outline color*/
+  border-right-color: #FFFFFF;
+  border-width: 15px;
+}
+
+article.media article.media:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+.mySearch {
+  width: auto;
+  margin: 0px;
+  height: 4.5vh;
+  border-radius: 4.5vh 0vh 0vh 4.5vh;
+  border: solid #999 1px;
+  padding-left: 4.5vh;
+}
+
+.searchButton {
+  margin: 0px;
+  border-radius: 0vh 4.5vh 4.5vh 0vh;
+  height: 4.5vh;
+}
+
+
+#q {
+  width: 10%;
+  max-width: 100px;
+  min-width: 50px;
+  margin: auto;
+}
+
+.mycard {
+  background: white;
+  border : white;
+}
+
+.round-profile
+{
+  border-radius: 60px;
+  height: 60px;
+  width: 60px;
+  background: white;
+}
+
+.dashboard {
+  background: #484848;
+  color: white;
+  min-height: calc(100vh - 4rem);
+} */
+
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  background-color: blue;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}

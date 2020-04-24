@@ -1,0 +1,18 @@
+{% load static %}
+<body>
+<!--  form to take user input -->
+      <form action="/faq/answer/" method="POST">{% csrf_token %}
+
+                       <h1><b>{{q.desp}}</b></h1>
+                      <input type="hidden" value="{{q.qid}}" name="qid" />
+                      <input type="hidden" value="{{q.desp}}" name="question" />
+                      <input type="hidden" value="{{q.subject}}" name="subject" />
+
+                      <textarea placeholder="This is an awesome comment box" rows="20" name="desp" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+<br><br>
+                        <input type="submit" name="answer" value="answer" value="POST">
+                        <link rel="stylesheet" href="{% static 'faq/textarea.css' %}">
+
+
+      </form>
+    </body>
